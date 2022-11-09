@@ -8,16 +8,16 @@ import { FormStyled } from './styled'
 import 'react-toastify/dist/ReactToastify.css';
 const SearchComponent = () => {
 
-    const {form, handleChange, cleanFields} = useForm({
-      name: ""
-    })
-    const { states, setters } = useContext(GlobalContext)
+  const { form, handleChange, cleanFields } = useForm({
+    name: ""
+  })
+  const { states, setters } = useContext(GlobalContext)
 
-    const onSubmit = async (event) => {
-      await event.preventDefault()
-      
-      
-      await axios.get(`${BASE_URL}/users/${form.name}`)
+  const onSubmit = async (event) => {
+    await event.preventDefault()
+
+
+    await axios.get(`${BASE_URL}/users/${form.name}`)
       .then((res) => {
         states.profile && states.profile && setters.setProfile && setters.setProfile(res.data)
         const newProfile = res.data
@@ -33,29 +33,38 @@ const SearchComponent = () => {
       })
       .catch((err) => {
         const errCode = err.response.status
-        if(errCode >= 400 && errCode < 500) {
-          toast.error("Usuário não encontrado")
+        if (errCode >= 400 && errCode < 500) {
+          toast.error("Usuário não encontrado", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          })
         } else {
           toast.error("Error de servidor, API fora do ar.")
         }
       })
-    }
+  }
 
-    useEffect(() => {
-      onSubmit()
-    },[states.watcher && states.watcher])
+  useEffect(() => {
+    onSubmit()
+  }, [states.watcher && states.watcher])
 
   return (
     <FormStyled onSubmit={onSubmit}>
-    <input 
-     name='name'
-     type="text"
-     value={form.name}
-     onChange={handleChange}
-     placeholder="Usuário do GitHub"
-     required />
-   <button> Procurar </button>
-  </FormStyled>
+      <input
+        name='name'
+        type="text"
+        value={form.name}
+        onChange={handleChange}
+        placeholder="Usuário do GitHub"
+        required />
+      <button> Procurar </button>
+    </FormStyled>
   )
 }
 
