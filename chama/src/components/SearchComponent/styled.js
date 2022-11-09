@@ -7,6 +7,7 @@ export const FormStyled = styled.form`
     align-items: center;
     width: 40rem;
     display: flex;
+    align-items: center;
     :active {
         border: #989898;
     }
@@ -20,6 +21,8 @@ export const FormStyled = styled.form`
     border-color: rgb(88,88,88);
     margin: 0px 0px 15px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-decoration: solid white 1px;
  };
  button {
     background-color:rgb(88,88,88);

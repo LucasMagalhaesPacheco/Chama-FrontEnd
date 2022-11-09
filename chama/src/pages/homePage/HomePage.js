@@ -1,13 +1,16 @@
 import React from 'react'
 import HomeComponent from '../../components/homeComponent/HomeComponent'
 import SearchComponent from '../../components/SearchComponent/SearchComponent'
+import { HomeMainSection, MainSection } from './Styled'
 
 const HomePage = () => {
   return (
-    <div>
-        <SearchComponent />
+   <MainSection>
+    <SearchComponent />
+     <HomeMainSection>
         <HomeComponent />
-    </div>
+    </HomeMainSection>
+   </MainSection>
   )
 }
 

@@ -1,46 +1,13 @@
-import React, {  useContext, useEffect } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Logo from '../../assets/logo.png'
-import { BASE_URL } from '../../constants/BASEURL'
-import GlobalContext from '../../Global/GlobalContext'
-import { useForm } from '../../hooks/useForm'
 import { goToHome, goToHistoric } from '../../routes/coordinator'
-import { FormStyled, HeaderStyled } from './styled'
-import axios from 'axios'
+import { HeaderStyled } from './styled'
+
 
 const Headers = () => {
     const navigate = useNavigate()
-    const {form, handleChange, cleanFields} = useForm({
-      name: ""
-    })
-    const { states, setters } = useContext(GlobalContext)
-
-    const onSubmit = async (event) => {
-      await event.preventDefault()
-      
-      
-      await axios.get(`${BASE_URL}/users/${form.name}`)
-      .then((res) => {
-        console.log(res)
-        states.profile && states.profile && setters.setProfile && setters.setProfile(res.data)
-        const newProfile = res.data
-        newProfile.dateSearch = Date.now()
-        states.profiles.push(newProfile)
-        const newProfileList = [...states.profiles, states.profiles]
-        localStorage.setItem("profiles", JSON.stringify(newProfileList))
-        cleanFields()
-        setters.setWatcher(states.watcher + 1)
-        alert("Busca de perfil")
-        
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-    }
-
-    useEffect(() => {
-      onSubmit()
-    },[states.watcher && states.watcher])
+   
 
     
   return (
