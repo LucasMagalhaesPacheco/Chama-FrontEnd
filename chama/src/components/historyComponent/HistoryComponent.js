@@ -21,7 +21,13 @@ const HistoryComponent = () => {
         )
     })
   return (
-    <div>{allProfilles}</div>
+    <>
+    {states.profiles && states.profiles.length > 0 ? 
+      <div>{allProfilles}</div> :
+      <div>Nenhum histórico disponível</div>
+      }
+    
+    </>
   )
 }
 
