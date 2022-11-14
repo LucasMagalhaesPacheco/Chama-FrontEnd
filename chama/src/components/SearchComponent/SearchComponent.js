@@ -28,7 +28,6 @@ const SearchComponent = () => {
         const newProfileList = [...states.profiles, states.profiles]
         localStorage.setItem("profiles", JSON.stringify(newProfileList))
         cleanFields()
-        toast.success("Buscando usuário aguarde um momento")
         setters.setWatcher(states.watcher + 1)
       })
       .catch((err) => {
