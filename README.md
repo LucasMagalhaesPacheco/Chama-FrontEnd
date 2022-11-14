@@ -20,9 +20,9 @@ Página de histórico: a página deve mostrar todos os termos anteriores pesquis
 - Quando buscado, aparece os dados inicias da pessoa como aonde ela mora seus repositórios públicos entre outra coisa.
 - Usuário pode ver seu histórico de pesquisas e clicando na foto do usuário será levado diretamente para o Github
 
-## 🔗Link Surge  
+## 🔗Link Vercel  
 
-[Chama-Challenge](http://lucas-chama-challenge.surge.sh/)
+[Chama-Challenge](https://chama-challenge.vercel.app/)
 
 <h2> 💻Como Rodar o Projeto Localmente </h2>
 
