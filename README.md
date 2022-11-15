@@ -22,7 +22,7 @@ Página de histórico: a página deve mostrar todos os termos anteriores pesquis
 
 ## 🔗Link Vercel  
 
-[Chama-Challenge](https://chama-challenge.vercel.app/)
+[Chama-Challenge](https://chama-front-end.vercel.app/)
 
 <h2> 💻Como Rodar o Projeto Localmente </h2>
 
