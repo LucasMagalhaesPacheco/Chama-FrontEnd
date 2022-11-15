@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import GlobalContext from '../../Global/GlobalContext'
 import { PFollowStyled, StyledH2, StyledH1 } from '../homeComponent/styled'
 import { HistorySection, SectionDiv, SectionStyledHistory, StyledImgHistory } from './styled'
@@ -20,11 +20,13 @@ const HistoryComponent = () => {
             </SectionDiv>
         )
     })
+
+    
   return (
     <>
     {states.profiles && states.profiles.length > 0 ? 
       <div>{allProfilles}</div> :
-      <div>Nenhum histórico disponível</div>
+      <div></div>
       }
     
     </>
