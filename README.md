@@ -1,7 +1,7 @@
 <h2 align="center">  
 
-<img width="2.5%" src=https://user-images.githubusercontent.com/111194226/197623194-9db85c72-3384-4a40-9935-0129b8eec561.svg /> Chama Challange  <img width="2.5%" src=https://user-images.githubusercontent.com/111194226/197623194-9db85c72-3384-4a40-9935-0129b8eec561.svg />
-
+ Chama Challange  
+ 
 </h2>
 
 <h4 align="justify"> 
